@@ -17,8 +17,10 @@ var CategoriasComponent = (function () {
     }
     CategoriasComponent.prototype.cadastrarCategoria = function () {
         var dto = {
-            'Nome': this.nomeCategoria
+            'Nome': this.nomeCategoria,
+            'Descricao': this.descricaoCategoria
         };
+        alert(dto);
         this._categoriaService.adicionar(dto);
     };
     return CategoriasComponent;

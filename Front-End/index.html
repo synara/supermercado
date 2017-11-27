@@ -3,7 +3,7 @@
 
 <head lang="en">
     <base href="/">    
-    <title>Sistema Condomínio</title>
+    <title>Supermercado</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,10 +25,13 @@
     <!-- Configure SystemJS -->
     <script src="systemjs.config.js"></script>
     <link rel="stylesheet" type="text/css" href="/node_modules/angular2-toaster/toaster.css" />
-
-    <script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">    <script>
       System.import('app/main.js').catch(function(err){ console.error(err); });
        
+
+       $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
     </script>
 </head>
 

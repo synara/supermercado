@@ -3,14 +3,27 @@
 }
 
 .input {
-    width: 20%;
+    width: 50%;
 }
 
 .label-txt {
-    margin-right: 17%;
+    margin-right: 42%;
 }
 
 .btn-align {
     margin-top: 2%;
     margin-right: 13%;
+}
+
+.text-area {
+    margin-top: 2%;
+    margin-right: 38%;
+}
+
+.table {
+    width: 60%;
+}
+
+.td-acoes {
+    width: 20%;
 }

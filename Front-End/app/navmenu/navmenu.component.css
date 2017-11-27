@@ -1,3 +1,7 @@
 .opcoes {
     cursor: pointer;
 }
+
+*{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}

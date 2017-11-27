@@ -11,13 +11,17 @@ import { CategoriaService } from './categorias.service';
 
 export class CategoriasComponent {
     nomeCategoria : string;
+    descricaoCategoria: string;
 
     constructor(private _categoriaService: CategoriaService){}
 
     cadastrarCategoria() {
        var dto = {
-           'Nome': this.nomeCategoria
+           'Nome': this.nomeCategoria,
+           'Descricao': this.descricaoCategoria
        }
+
+       alert(dto);
 
        this._categoriaService.adicionar(dto);
 
