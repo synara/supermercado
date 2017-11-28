@@ -25,5 +25,11 @@
 }
 
 .td-acoes {
-    width: 20%;
+    width: 15%;
 }
+
+
+.btn-addCategoria {
+    float: right;
+}
+

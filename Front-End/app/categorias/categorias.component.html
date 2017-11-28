@@ -1,38 +1,39 @@
 <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
 
-<div align='center' class='col-md-12'>
-    <h3 class='col-md-10'>Categorias</h3>
-
-    <button type="button" class="btn btn-primary col-md-2" data-toggle="modal" data-target="#exampleModal" >
-        Cadastrar categoria
+<div align='center'>
+  <div> 
+    <button type="button" class="btn btn-primary btn-addCategoria" data-toggle="modal" data-target="#exampleModal" >
+      Cadastrar categoria
     </button>
+  </div>
+
+    <h3>Categorias</h3>
 </div>   
 
 <table class="table table-bordered" align="center">
   <thead>
     <tr>
       <th scope="col">Nome</th>
-      <th scope="col">Perecível</th>
       <th scope="col">Descrição</th>
-      <th scope="col">Ações</th>
+      <th scope="col" class="td-acoes">Ações</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td>Laticinios</td>
-      <td>Sim</td>
-      <td>Teste uhihsdfsdfjsfld</td>
-      <td class="td-acoes">
-         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-         <i class="fa fa-trash-o" aria-hidden="true"></i>
+ <tbody *ngIf="categorias">
+    <tr *ngFor = 'let c of categorias'>
+      <td>{{c.Nome}}</td>
+      <td>{{c.Descricao}}</td>
+      <td class="td-acoes" align="">
+        <button class="btn btn-success">
+          <span class="glyphicon glyphicon-edit"></span>
+        </button>
+        <button class="btn btn-danger">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
       </td>
     </tr>
   </tbody>
 </table>
-
- <!-- Button trigger modal -->
-
-
+ 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

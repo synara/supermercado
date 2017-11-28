@@ -38,7 +38,7 @@ AppModule = __decorate([
             ])
         ],
         providers: [
-            { provide: 'ORIGIN_URL', useValue: "http://localhost:51726" },
+            { provide: 'ORIGIN_URL', useValue: "http://localhost:51726/api/" },
         ]
     })
 ], AppModule);

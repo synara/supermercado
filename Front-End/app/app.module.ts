@@ -29,7 +29,7 @@ import { CategoriaService } from './categorias/categorias.service';
     
     ],
        providers: [
-        { provide: 'ORIGIN_URL', useValue: "http://localhost:51726" },
+        { provide: 'ORIGIN_URL', useValue: "http://localhost:51726/api/" },
     ]
 })
 export class AppModule { }

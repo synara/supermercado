@@ -24,8 +24,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Configure SystemJS -->
     <script src="systemjs.config.js"></script>
-    <link rel="stylesheet" type="text/css" href="/node_modules/angular2-toaster/toaster.css" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">    <script>
+    <!--<link rel="stylesheet" type="text/css" href="/node_modules/angular2-toaster/toaster.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+        
+    <script>
       System.import('app/main.js').catch(function(err){ console.error(err); });
        
 

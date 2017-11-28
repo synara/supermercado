@@ -1,0 +1,71 @@
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\SistemaCadastroProdutos.dll.config
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\SistemaCadastroProdutos.dll
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\SistemaCadastroProdutos.pdb
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.dll
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.SqlServer.dll
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Newtonsoft.Json.dll
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Net.Http.Formatting.dll
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.dll
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.WebHost.dll
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.xml
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.SqlServer.xml
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Newtonsoft.Json.xml
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Net.Http.Formatting.xml
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.xml
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.WebHost.xml
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csprojResolveAssemblyReference.cache
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csproj.CoreCompileInputs.cache
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.dll
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.pdb
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.Migrations.inicial.resources
+C:\Users\Synara\Documents\Estudos\Faculdade\2017.2\Sistemas Distribuídos\CadastroProdutos\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csproj.GenerateResource.Cache
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\SistemaCadastroProdutos.dll.config
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\SistemaCadastroProdutos.dll
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\SistemaCadastroProdutos.pdb
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.dll
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.SqlServer.dll
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Newtonsoft.Json.dll
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Net.Http.Formatting.dll
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.dll
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.WebHost.dll
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.xml
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.SqlServer.xml
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Newtonsoft.Json.xml
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Net.Http.Formatting.xml
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.xml
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.WebHost.xml
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csproj.CoreCompileInputs.cache
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.dll
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.pdb
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.Migrations.inicial.resources
+C:\Users\Synara\Desktop\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csproj.GenerateResource.Cache
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\SistemaCadastroProdutos.dll.config
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\SistemaCadastroProdutos.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\SistemaCadastroProdutos.pdb
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.SqlServer.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Newtonsoft.Json.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Net.Http.Formatting.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Cors.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.Cors.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.WebHost.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.xml
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\EntityFramework.SqlServer.xml
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.Cors.xml
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\Newtonsoft.Json.xml
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Net.Http.Formatting.xml
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.xml
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.WebHost.xml
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csprojResolveAssemblyReference.cache
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.Migrations.inicial.resources
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csproj.GenerateResource.Cache
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csproj.CoreCompileInputs.cache
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.dll
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.pdb

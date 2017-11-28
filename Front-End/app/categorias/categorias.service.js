@@ -14,24 +14,31 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-var Observable_1 = require("rxjs/Observable");
+var Rx_1 = require("rxjs/Rx");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
+require("rxjs/add/operator/do");
 core_1.Injectable();
 var CategoriaService = (function () {
     function CategoriaService(_http, originUrl) {
         this._http = _http;
         this.originUrl = originUrl;
-        this.categoriaAPI = '/controllers/Categorias/Adicionar';
+        this.categoriaAPI = 'Categoria/';
     }
     CategoriaService.prototype.handleError = function (error) {
         console.error(error);
-        return Observable_1.Observable.throw(error.json().error || 'Server error');
+        return Rx_1.Observable.throw(error.json().error || 'Server error');
+    };
+    CategoriaService.prototype.obterCategorias = function () {
+        return this._http.get(this.originUrl + this.categoriaAPI)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+            .catch(this.handleError);
     };
     CategoriaService.prototype.adicionar = function (dto) {
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         this.options = new http_1.RequestOptions({ headers: this.headers });
-        return this._http.post(this.originUrl + this.categoriaAPI, JSON.stringify(dto), this.options)
+        return this._http.post(this.originUrl + "Categoria/Post", JSON.stringify(dto), this.options)
             .map(function (resp) { return console.log(resp); })
             .catch(this.handleError);
     };
