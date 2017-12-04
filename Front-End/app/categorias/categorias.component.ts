@@ -31,14 +31,17 @@ export class CategoriasComponent extends OnInit {
 
     cadastrarCategoria() {
 
-        if(this.nomeCategoria == "" || this.nomeCategoria == undefined || this.descricaoCategoria == "" || this.descricaoCategoria == undefined) {
-            return;
+        if(this.nomeCategoria == "" || this.nomeCategoria == undefined || 
+            this.descricaoCategoria == "" || this.descricaoCategoria == undefined) {
+                return;
         }
+
         else{ 
             var dto = {
                 Nome : this.nomeCategoria,
                 Descricao : this.descricaoCategoria
             }
+            
             this._categoriaService.adicionar(dto)
             .subscribe(data => console.log(data), error => this.errorMessage = <any>error, () => this.ngOnInit());            
         }

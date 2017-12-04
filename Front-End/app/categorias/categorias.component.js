@@ -40,7 +40,8 @@ var CategoriasComponent = (function (_super) {
     };
     CategoriasComponent.prototype.cadastrarCategoria = function () {
         var _this = this;
-        if (this.nomeCategoria == "" || this.nomeCategoria == undefined || this.descricaoCategoria == "" || this.descricaoCategoria == undefined) {
+        if (this.nomeCategoria == "" || this.nomeCategoria == undefined ||
+            this.descricaoCategoria == "" || this.descricaoCategoria == undefined) {
             return;
         }
         else {

@@ -30,8 +30,9 @@ export class CategoriaService {
     adicionar(dto: any) {      
         this.headers = new Headers({ 'Content-Type': 'application/json' });
         this.options = new RequestOptions({ headers: this.headers });
+        console.log(dto);
 
-        return this._http.post(this.originUrl + "Categoria/Post", JSON.stringify(dto), this.options)
+        return this._http.post(this.originUrl + this.categoriaAPI, JSON.stringify(dto), this.options)
         .map(resp => console.log(resp))
         .catch(this.handleError);
     }

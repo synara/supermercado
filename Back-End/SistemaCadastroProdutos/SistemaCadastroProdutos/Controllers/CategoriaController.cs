@@ -25,9 +25,10 @@ namespace SistemaCadastroProdutos.Controllers
         }
 
         // GET: api/Categoria/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return "value";
+            var categoria = _repository.ObterPorId(id);
+            return Ok(categoria);
         }
 
         // POST: api/Categoria
@@ -48,8 +49,18 @@ namespace SistemaCadastroProdutos.Controllers
         }
 
         // DELETE: api/Categoria/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
+            try
+            {
+                _repository.RemoverPorId(id);
+
+            } catch (ApplicationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Ok();
         }
     }
 }

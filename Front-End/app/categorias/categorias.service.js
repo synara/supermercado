@@ -38,7 +38,8 @@ var CategoriaService = (function () {
     CategoriaService.prototype.adicionar = function (dto) {
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         this.options = new http_1.RequestOptions({ headers: this.headers });
-        return this._http.post(this.originUrl + "Categoria/Post", JSON.stringify(dto), this.options)
+        console.log(dto);
+        return this._http.post(this.originUrl + this.categoriaAPI, JSON.stringify(dto), this.options)
             .map(function (resp) { return console.log(resp); })
             .catch(this.handleError);
     };
