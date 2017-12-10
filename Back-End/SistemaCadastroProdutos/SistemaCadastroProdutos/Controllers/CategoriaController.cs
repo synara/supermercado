@@ -1,4 +1,5 @@
 ﻿using SistemaCadastroProdutos.Dtos;
+using SistemaCadastroProdutos.Infra;
 using SistemaCadastroProdutos.Models;
 using SistemaCadastroProdutos.Repositorios;
 using System;
@@ -13,39 +14,57 @@ namespace SistemaCadastroProdutos.Controllers
 {
     public class CategoriaController : ApiController
     {
-        private CategoriaRepositorio _repository = new CategoriaRepositorio(new Infra.ApplicationDbContext());
-        public CategoriaController() {}
+        private UnitOfWork _uow = new UnitOfWork(new ApplicationDbContext());
+
+        public CategoriaController() { }
 
 
         // GET: api/Categoria
         public IHttpActionResult Get()
         {
-            var ok = this._repository.TodasCategorias();
-            return Ok(this._repository.TodasCategorias());
+            return Ok(this._uow._categoriaRepositorio.TodasCategorias());
         }
 
         // GET: api/Categoria/5
         public IHttpActionResult Get(int id)
         {
-            var categoria = _repository.ObterPorId(id);
+            var categoria = this._uow._categoriaRepositorio.ObterPorId(id);
             return Ok(categoria);
         }
 
         // POST: api/Categoria
-        public void Post([FromBody]CategoriaDto dto)
+        public bool Post([FromBody]CategoriaDto dto)
         {
-            var categoria = new Categoria()
+            try
             {
-                Nome = dto.Nome,
-                Descricao = dto.Descricao
-            };
+                var categoria = new Categoria()
+                {
+                    Nome = dto.Nome,
+                    Descricao = dto.Descricao
+                };
 
-            _repository.Adicionar(categoria);
+                _uow._categoriaRepositorio.Adicionar(categoria);
+                _uow.Salvar();
+                return true;
+            }
+            catch (ArgumentException ex)
+            {
+                return false;
+            }
+
         }
 
         // PUT: api/Categoria/5
-        public void Put(int id, [FromBody]string value)
+        public void Put([FromBody] CategoriaDto dto)
         {
+            var categoria = _uow._categoriaRepositorio.ObterPorId(dto.Id);
+            if(categoria != null)
+            {
+                categoria.Nome = dto.Nome;
+                categoria.Descricao = dto.Descricao;
+            }
+
+            _uow.Salvar();
         }
 
         // DELETE: api/Categoria/5
@@ -53,9 +72,11 @@ namespace SistemaCadastroProdutos.Controllers
         {
             try
             {
-                _repository.RemoverPorId(id);
+                _uow._categoriaRepositorio.RemoverPorId(id);
+                _uow.Salvar();
 
-            } catch (ApplicationException ex)
+            }
+            catch (ApplicationException ex)
             {
                 return BadRequest(ex.Message);
             }

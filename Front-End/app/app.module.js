@@ -15,6 +15,7 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var categorias_component_1 = require("./categorias/categorias.component");
 var navmenu_component_1 = require("./navmenu/navmenu.component");
+var produtos_component_1 = require("./produtos/produtos.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,13 +28,16 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             home_component_1.HomeComponent,
             categorias_component_1.CategoriasComponent,
-            navmenu_component_1.NavMenuComponent
+            navmenu_component_1.NavMenuComponent,
+            produtos_component_1.ProdutoComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
             router_1.RouterModule.forRoot([
+                { path: 'categorias', component: categorias_component_1.CategoriasComponent },
+                { path: 'produtos', component: produtos_component_1.ProdutoComponent },
                 { path: '**', component: categorias_component_1.CategoriasComponent }
             ])
         ],

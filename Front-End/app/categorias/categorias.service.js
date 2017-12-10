@@ -26,7 +26,6 @@ var CategoriaService = (function () {
         this.categoriaAPI = 'Categoria/';
     }
     CategoriaService.prototype.handleError = function (error) {
-        console.error(error);
         return Rx_1.Observable.throw(error.json().error || 'Server error');
     };
     CategoriaService.prototype.obterCategorias = function () {
@@ -38,9 +37,25 @@ var CategoriaService = (function () {
     CategoriaService.prototype.adicionar = function (dto) {
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         this.options = new http_1.RequestOptions({ headers: this.headers });
-        console.log(dto);
         return this._http.post(this.originUrl + this.categoriaAPI, JSON.stringify(dto), this.options)
             .map(function (resp) { return console.log(resp); })
+            .catch(this.handleError);
+    };
+    CategoriaService.prototype.obterCategoria = function (id) {
+        return this._http.get(this.originUrl + this.categoriaAPI + id)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+            .catch(this.handleError);
+    };
+    CategoriaService.prototype.atualizar = function (dto) {
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        this.options = new http_1.RequestOptions({ headers: this.headers });
+        return this._http.put(this.originUrl + this.categoriaAPI, JSON.stringify(dto), this.options)
+            .map(function (resp) { return console.log(resp); })
+            .catch(this.handleError);
+    };
+    CategoriaService.prototype.remover = function (id) {
+        return this._http.delete(this.originUrl + this.categoriaAPI + id)
             .catch(this.handleError);
     };
     return CategoriaService;

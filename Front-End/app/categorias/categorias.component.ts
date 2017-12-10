@@ -15,13 +15,18 @@ export class CategoriasComponent extends OnInit {
     descricaoCategoria: string;
     categorias: Categoria[];
     errorMessage: string;
+    error: boolean = false;
+    hideMsg: boolean = true;
+    add: boolean = true;
+    categoria : Categoria;
+    id : number;
+
     constructor(private _categoriaService: CategoriaService){ 
         super();
     }
 
     ngOnInit(): void {
-        this._categoriaService.obterCategorias()
-        .subscribe(res => this.categorias = res)
+        this.obterCategorias();
     }
 
     obterCategorias() {
@@ -29,13 +34,16 @@ export class CategoriasComponent extends OnInit {
         .subscribe(categorias => this.categorias = categorias, error => this.errorMessage = <any>error);
     }
 
-    cadastrarCategoria() {
+    limparCampos() {
+        this.nomeCategoria = "";
+        this.descricaoCategoria = "";
+    }
 
+    cadastrarCategoria() {
         if(this.nomeCategoria == "" || this.nomeCategoria == undefined || 
             this.descricaoCategoria == "" || this.descricaoCategoria == undefined) {
                 return;
         }
-
         else{ 
             var dto = {
                 Nome : this.nomeCategoria,
@@ -43,8 +51,33 @@ export class CategoriasComponent extends OnInit {
             }
             
             this._categoriaService.adicionar(dto)
-            .subscribe(data => console.log(data), error => this.errorMessage = <any>error, () => this.ngOnInit());            
+            .subscribe(data => this.error = data);
+            this.ngOnInit();            
         }
+    }
+
+    obterCategoria(id: any) {
+        this.id = id;
+        this._categoriaService.obterCategoria(id)
+        .subscribe(categoria => this.categoria = categoria, error => this.errorMessage = <any>error);  
+    }
+
+    atualizarCategoria() {
+        var dto = {
+            Id : this.id,
+            Nome : this.categoria.Nome,
+            Descricao : this.categoria.Descricao
+        }
+
+        this._categoriaService.atualizar(dto)
+        .subscribe(() => this.obterCategorias());           
+    }
+
+    removerCategoria() {
+        this._categoriaService.remover(this.id)
+        .subscribe(() => this.obterCategorias());
+
+        this.limparCampos();
     }
 }
 

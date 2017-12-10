@@ -14,7 +14,7 @@ namespace SistemaCadastroProdutos.Models
         public string Nome { get; set; }
         public double Preco { get; set; }
         public bool Perecivel { get; set; }
-        public Categoria Categoria { get; set; }
+        public virtual Categoria Categoria { get; set; }
         public int? CategoriaId { get; set; }
 
     }

@@ -1,0 +1,54 @@
+<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
+<div align='center'>
+    <div> 
+      <button type="button" class="btn btn-primary btn-addProduto" data-toggle="modal" data-target="#exampleModal">
+        Cadastrar produto
+      </button>
+    </div>
+  
+      <h3>Produtos</h3>
+
+
+      <div *ngIf="!produtos" align="center" >
+        <div class="alert alert-danger alert-erro" role="alert" align="center">
+          Não há produtos cadastrados. Favor, cadastre-os.
+        </div>
+      </div>
+
+
+      <table class="table table-bordered" align="center" *ngIf="produtos">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Perecível</th>
+            <th scope="col">Categoria</th>
+            <th scope="col" class="td-acoes">Ações</th>
+          </tr>
+        </thead>
+       <tbody *ngIf="produtos">
+          <tr *ngFor = 'let p of produtos'>
+            <td>{{p.Nome}}</td>
+            <td>{{p.Descricao}}</td>
+            <th>{{p.Preco | currency:'BR' }}</th>
+            <th *ngIf="p.Perecivel">
+                Sim
+            </th>
+            <th *ngIf="!p.Perecivel">
+                Não
+            </th>
+            <th>{{p.Categoria.Nome}}</th>
+            <td class="td-acoes" align="">
+              <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal2" (click)="obterCategoria(c.Id)">
+                <span class="glyphicon glyphicon-edit"></span>
+              </button>
+              <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal3" (click)="obterCategoria(c.Id)">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>   

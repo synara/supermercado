@@ -2,7 +2,7 @@
 
 <div align='center'>
   <div> 
-    <button type="button" class="btn btn-primary btn-addCategoria" data-toggle="modal" data-target="#exampleModal" >
+    <button type="button" class="btn btn-primary btn-addCategoria" data-toggle="modal" data-target="#exampleModal" (click)="exibirCadastro()">
       Cadastrar categoria
     </button>
   </div>
@@ -10,7 +10,19 @@
     <h3>Categorias</h3>
 </div>   
 
-<table class="table table-bordered" align="center">
+<div *ngIf="error && hideMsg" align="center" >
+  <div class="alert alert-danger alert-erro" role="alert" align="center">
+    Um erro ocorreu ao tentar cadastrar a nova categoria. Tente novamente.
+  </div>
+</div>
+
+<div *ngIf="!categorias" align="center" >
+  <div class="alert alert-danger alert-erro" role="alert" align="center">
+    Não há categorias cadastradas. Favor, cadastre-as.
+  </div>
+</div>
+
+<table class="table table-bordered" align="center" *ngIf="categorias">
   <thead>
     <tr>
       <th scope="col">Nome</th>
@@ -23,10 +35,10 @@
       <td>{{c.Nome}}</td>
       <td>{{c.Descricao}}</td>
       <td class="td-acoes" align="">
-        <button class="btn btn-success">
+        <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal2" (click)="obterCategoria(c.Id)">
           <span class="glyphicon glyphicon-edit"></span>
         </button>
-        <button class="btn btn-danger">
+        <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal3" (click)="obterCategoria(c.Id)">
           <span class="glyphicon glyphicon-remove"></span>
         </button>
       </td>
@@ -34,26 +46,62 @@
   </tbody>
 </table>
  
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" align="center">Cadastro de Categoria</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" align="center">
-        <label class='label-txt'>Nome:</label>
-        <input type='text' class='form-control input' [(ngModel)]="nomeCategoria" placeholder="Nome da categoria">
-        <label class='text-area'>Descrição:</label>
-        <textarea rows="4" cols="50" class="form-control input " placeholder="Descrição da categoria"></textarea>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary" (click)="cadastrarCategoria()">Salvar</button>
+<!-- Modal Cadastro -->
+<div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <h4 class="modal-title" id="exampleModalLabel" align="center">Cadastro de Categoria</h4>       
+        <div class="modal-body" align="center">
+          <label class='label-txt'>Nome:</label>
+          <input type='text' class='form-control input' [(ngModel)]="nomeCategoria" placeholder="Nome da categoria">
+          <label class='text-area'>Descrição:</label>
+          <textarea rows="4" cols="50" [(ngModel)]="descricaoCategoria" class="form-control input " placeholder="Descrição da categoria"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="limparCampos()">Fechar</button>
+          <button type="button" class="btn btn-primary" (click)="cadastrarCategoria()" data-dismiss="modal">Salvar</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Modal Atualizar -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" *ngIf="categoria">
+        <h4 class="modal-title" id="exampleModalLabel" align="center">Atualizar categoria</h4>        
+        <div class="modal-body" align="center">
+          <label class='label-txt'>Nome:</label>
+          <input type='text' class='form-control input' [(ngModel)]="categoria.Nome">
+          <label class='text-area'>Descrição:</label>
+          <textarea rows="4" cols="50" [(ngModel)]="categoria.Descricao" class="form-control input"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="limparCampos()">Fechar</button>
+          <button type="button" class="btn btn-primary" (click)="atualizarCategoria()" data-dismiss="modal">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Remover -->
+  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" *ngIf="categoria">
+        <h4 class="modal-title" id="exampleModalLabel" align="center">Tem certeza que deseja remover essa categoria?</h4>        
+        <div class="modal-body">
+          <div><p><b>Nome: </b>{{categoria.Nome}}</p></div>
+          <div><p><b>Descrição: </b>{{categoria.Descricao}}</p></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="limparCampos()">Não</button>
+          <button type="button" class="btn btn-danger" (click)="removerCategoria()" data-dismiss="modal">Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

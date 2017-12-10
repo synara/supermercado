@@ -8,6 +8,7 @@ import { HttpModule } from "@angular/http";
 import { CategoriasComponent } from './categorias/categorias.component';
 import { NavMenuComponent } from './navmenu/navmenu.component';
 import { CategoriaService } from './categorias/categorias.service';
+import { ProdutoComponent } from './produtos/produtos.component';
 
 
 @NgModule({
@@ -17,14 +18,18 @@ import { CategoriaService } from './categorias/categorias.service';
         AppComponent,
         HomeComponent,
         CategoriasComponent,
-        NavMenuComponent
+        NavMenuComponent,
+        ProdutoComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
         RouterModule.forRoot([
-            { path: '**', component: CategoriasComponent }
+            { path: 'categorias', component: CategoriasComponent},
+            { path: 'produtos', component: ProdutoComponent },
+            { path: '**', component: CategoriasComponent}
+
         ])
     
     ],

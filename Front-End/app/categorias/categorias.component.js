@@ -26,17 +26,22 @@ var CategoriasComponent = (function (_super) {
     function CategoriasComponent(_categoriaService) {
         var _this = _super.call(this) || this;
         _this._categoriaService = _categoriaService;
+        _this.error = false;
+        _this.hideMsg = true;
+        _this.add = true;
         return _this;
     }
     CategoriasComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._categoriaService.obterCategorias()
-            .subscribe(function (res) { return _this.categorias = res; });
+        this.obterCategorias();
     };
     CategoriasComponent.prototype.obterCategorias = function () {
         var _this = this;
         this._categoriaService.obterCategorias()
             .subscribe(function (categorias) { return _this.categorias = categorias; }, function (error) { return _this.errorMessage = error; });
+    };
+    CategoriasComponent.prototype.limparCampos = function () {
+        this.nomeCategoria = "";
+        this.descricaoCategoria = "";
     };
     CategoriasComponent.prototype.cadastrarCategoria = function () {
         var _this = this;
@@ -50,8 +55,31 @@ var CategoriasComponent = (function (_super) {
                 Descricao: this.descricaoCategoria
             };
             this._categoriaService.adicionar(dto)
-                .subscribe(function (data) { return console.log(data); }, function (error) { return _this.errorMessage = error; }, function () { return _this.ngOnInit(); });
+                .subscribe(function (data) { return _this.error = data; });
+            this.ngOnInit();
         }
+    };
+    CategoriasComponent.prototype.obterCategoria = function (id) {
+        var _this = this;
+        this.id = id;
+        this._categoriaService.obterCategoria(id)
+            .subscribe(function (categoria) { return _this.categoria = categoria; }, function (error) { return _this.errorMessage = error; });
+    };
+    CategoriasComponent.prototype.atualizarCategoria = function () {
+        var _this = this;
+        var dto = {
+            Id: this.id,
+            Nome: this.categoria.Nome,
+            Descricao: this.categoria.Descricao
+        };
+        this._categoriaService.atualizar(dto)
+            .subscribe(function () { return _this.obterCategorias(); });
+    };
+    CategoriasComponent.prototype.removerCategoria = function () {
+        var _this = this;
+        this._categoriaService.remover(this.id)
+            .subscribe(function () { return _this.obterCategorias(); });
+        this.limparCampos();
     };
     return CategoriasComponent;
 }(core_1.OnInit));
