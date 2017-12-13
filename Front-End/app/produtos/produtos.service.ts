@@ -2,6 +2,7 @@ import { Injectable, Inject } from "@angular/core";
 import { Http, Response, RequestOptions, Headers } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import { Produto } from "../models/Produto";
+import { ProdutoViewModel } from "../models/ProdutoViewModel";
 
 Injectable()
 export class ProdutoService {
@@ -15,9 +16,9 @@ export class ProdutoService {
         return Observable.throw(error.json().error || 'Server error');
     }
 
-    obterProdutos() : Observable<Produto[]> {
+    obterProdutos() : Observable<ProdutoViewModel> {
         return this._http.get(this.originUrl + this.produtoAPI)
-        .map((response: Response) => <Produto[]>response.json())
+        .map((response: Response) => <ProdutoViewModel>response.json())
         .do(data => console.log('All: ' + JSON.stringify(data)))
         .catch(this.handleError);   
     }

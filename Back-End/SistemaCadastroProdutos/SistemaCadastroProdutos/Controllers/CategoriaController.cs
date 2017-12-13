@@ -12,6 +12,7 @@ using System.Web.Http.Cors;
 
 namespace SistemaCadastroProdutos.Controllers
 {
+    [EnableCors("*","*", "*")]
     public class CategoriaController : ApiController
     {
         private UnitOfWork _uow = new UnitOfWork(new ApplicationDbContext());
@@ -28,7 +29,7 @@ namespace SistemaCadastroProdutos.Controllers
         // GET: api/Categoria/5
         public IHttpActionResult Get(int id)
         {
-            var categoria = this._uow._categoriaRepositorio.ObterPorId(id);
+            var categoria = this._uow._categoriaRepositorio.ObterPorId(id.ToString());
             return Ok(categoria);
         }
 
@@ -57,7 +58,7 @@ namespace SistemaCadastroProdutos.Controllers
         // PUT: api/Categoria/5
         public void Put([FromBody] CategoriaDto dto)
         {
-            var categoria = _uow._categoriaRepositorio.ObterPorId(dto.Id);
+            var categoria = _uow._categoriaRepositorio.ObterPorId(dto.Id.ToString());
             if(categoria != null)
             {
                 categoria.Nome = dto.Nome;

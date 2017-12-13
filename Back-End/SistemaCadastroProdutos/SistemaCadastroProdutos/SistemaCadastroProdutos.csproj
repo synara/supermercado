@@ -117,6 +117,7 @@
     <Compile Include="Repositorios\CategoriaRepositorio.cs" />
     <Compile Include="Repositorios\ProdutoRepositorio.cs" />
     <Compile Include="Repositorios\UnitOfWork.cs" />
+    <Compile Include="ViewModel\ProdutoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

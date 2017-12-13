@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
 <div align='center'>
-    <div> 
+    <div *ngIf="categorias"> 
       <button type="button" class="btn btn-primary btn-addProduto" data-toggle="modal" data-target="#exampleModal">
         Cadastrar produto
       </button>
@@ -16,34 +16,32 @@
       </div>
 
 
-      <table class="table table-bordered" align="center" *ngIf="produtos">
+      <table class="table table-bordered tblProdutos" align="center" *ngIf="produtos">
         <thead>
           <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Preço</th>
-            <th scope="col">Perecível</th>
-            <th scope="col">Categoria</th>
-            <th scope="col" class="td-acoes">Ações</th>
+            <th scope="col" class="">Nome</th>
+            <th scope="col" class="">Preço</th>
+            <th scope="col" class="">Perecível</th>
+            <th scope="col" class="">Categoria</th>
+            <th scope="col" class="tbl-Produtos">Ações</th>
           </tr>
         </thead>
        <tbody *ngIf="produtos">
-          <tr *ngFor = 'let p of produtos'>
+          <tr *ngFor = "let p of produtos">
             <td>{{p.Nome}}</td>
-            <td>{{p.Descricao}}</td>
-            <th>{{p.Preco | currency:'BR' }}</th>
+            <th>R$ {{p.Preco }}</th>
             <th *ngIf="p.Perecivel">
                 Sim
             </th>
             <th *ngIf="!p.Perecivel">
                 Não
             </th>
-            <th>{{p.Categoria.Nome}}</th>
+            <th>{{p.CategoriaNome}}</th>
             <td class="td-acoes" align="">
-              <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal2" (click)="obterCategoria(c.Id)">
+              <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal2" (click)="obterProduto(p.Id)">
                 <span class="glyphicon glyphicon-edit"></span>
               </button>
-              <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal3" (click)="obterCategoria(c.Id)">
+              <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal3" (click)="obterProduto(p.Id)">
                 <span class="glyphicon glyphicon-remove"></span>
               </button>
             </td>
@@ -52,3 +50,90 @@
       </table>
       
 </div>   
+
+
+<!-- Modal Cadastro -->
+<div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <h4 class="modal-title" id="exampleModalLabel" align="center">Cadastro de Produto</h4>       
+        <div class="modal-body" align="center">
+          <label class='label-txt'>Nome:</label>
+          <input type='text' class='form-control input' [(ngModel)]="nomeProduto" placeholder="Nome do produto">
+          <label class='label-txt'>Preço:</label>
+          <input [(ngModel)]="precoProduto" class="form-control input " placeholder="Preço do produto">
+          <div class='perecivel'>
+            <label>Perecível:</label>
+            <input type="checkbox" [(ngModel)]="perecivel">
+          </div>
+          <div>
+            <label class='categoria'>Categoria:</label>
+              <select [(ngModel)]="categoriaId" class="form-control input">
+                <option *ngFor="let c of categorias" [value]="c.Id" class="input">{{c.Nome}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="limparCampos()">Fechar</button>
+          <button type="button" class="btn btn-primary" (click)="cadastrar()" data-dismiss="modal">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Atualizar -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" *ngIf="produto">
+      <h4 class="modal-title" id="exampleModalLabel" align="center">Atualizar categoria</h4>        
+      <div class="modal-body" align="center">
+        <label class='label-txt'>Nome:</label>
+        <input type='text' class='form-control input' [(ngModel)]="produto.Nome">
+        <label class='label-txt'>Preco:</label>
+        <input [(ngModel)]="produto.Preco" class="form-control input">
+        <div class='perecivel'>
+          <label>Perecível: </label>
+          <input type="checkbox" [(ngModel)]="produto.Perecivel">    
+        </div>
+        <div>
+          <label class='categoria'>Categoria:</label>
+            <select [(ngModel)]="produto.CategoriaId" class="form-control input">
+              <option *ngFor="let c of categorias" [value]="c.Id" class="input">{{c.Nome}}</option>
+            </select>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="limparCampos()">Fechar</button>
+        <button type="button" class="btn btn-primary" (click)="atualizarProduto()" data-dismiss="modal">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Remover -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" *ngIf="produto">
+      <h4 class="modal-title" id="exampleModalLabel" align="center">Tem certeza que deseja remover essa categoria?</h4>        
+      <div class="modal-body">
+        <div><p><b>Nome: </b>{{produto.Nome}}</p></div>
+        <div><p><b>Preço: </b>{{produto.Preco}}</p></div>
+        <div><p><b>Categoria: </b>{{produto.CategoriaNome}}</p></div>
+        <div><p><b>Perecível: </b>{{produto.Perecivel}}</p></div>
+                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="limparCampos()">Não</button>
+        <button type="button" class="btn btn-danger" (click)="removerProduto()" data-dismiss="modal">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

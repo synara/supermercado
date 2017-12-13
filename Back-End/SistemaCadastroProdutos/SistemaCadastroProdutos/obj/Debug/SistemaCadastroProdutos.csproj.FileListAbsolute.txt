@@ -63,7 +63,6 @@ C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCad
 C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Net.Http.Formatting.xml
 C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.xml
 C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\bin\System.Web.Http.WebHost.xml
-C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csprojResolveAssemblyReference.cache
 C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.Migrations.inicial.resources
 C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csproj.GenerateResource.Cache
 C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csproj.CoreCompileInputs.cache
@@ -94,3 +93,4 @@ C:\Users\1514505\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCa
 C:\Users\1514505\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csproj.GenerateResource.Cache
 C:\Users\1514505\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.dll
 C:\Users\1514505\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.pdb
+C:\Users\Synara\Desktop\supermercado\Back-End\SistemaCadastroProdutos\SistemaCadastroProdutos\obj\Debug\SistemaCadastroProdutos.csprojResolveAssemblyReference.cache

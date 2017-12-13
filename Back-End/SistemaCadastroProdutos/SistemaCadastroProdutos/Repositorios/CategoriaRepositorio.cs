@@ -26,14 +26,15 @@ namespace SistemaCadastroProdutos.Repositorios
             return _context.Categorias.ToList();
         }
 
-        public Categoria ObterPorId(int id)
+        public Categoria ObterPorId(string id)
         {
-            return _context.Categorias.Where(c => c.Id == id).FirstOrDefault();
+            var idCategoria = Convert.ToInt32(id);
+            return _context.Categorias.Where(c => c.Id == idCategoria).FirstOrDefault();
         }
 
         public void RemoverPorId(int id)
         {
-            var categoria = ObterPorId(id);
+            var categoria = ObterPorId(id.ToString());
             _context.Categorias.Remove(categoria);
         }
     }

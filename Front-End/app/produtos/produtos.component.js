@@ -34,7 +34,60 @@ var ProdutoComponent = (function (_super) {
     ProdutoComponent.prototype.obterProdutos = function () {
         var _this = this;
         this._produtoService.obterProdutos()
-            .subscribe(function (produtos) { return _this.produtos = produtos; }, function (error) { return _this.errorMessage = error; });
+            .subscribe(function (produtos) {
+            _this.produtosVM = produtos,
+                _this.categorias = _this.produtosVM.Categorias,
+                _this.produtos = _this.produtosVM.Produtos;
+        }, function (error) { return _this.errorMessage = error; });
+    };
+    ProdutoComponent.prototype.cadastrar = function () {
+        if (this.nomeProduto == "" || this.nomeProduto == undefined ||
+            this.precoProduto == 0 || this.precoProduto == undefined ||
+            this.categoriaId == 0 || this.categoriaId == undefined ||
+            this.perecivel == undefined) {
+            return;
+        }
+        else {
+            var dto = {
+                Nome: this.nomeProduto,
+                Preco: this.precoProduto,
+                CategoriaId: this.categoriaId,
+                Perecivel: this.perecivel
+            };
+            this._produtoService.adicionar(dto)
+                .subscribe(function (data) { return console.log("sucesso!!"); });
+            this.ngOnInit();
+        }
+    };
+    ProdutoComponent.prototype.obterProduto = function (id) {
+        var _this = this;
+        this.id = id;
+        this._produtoService.obterProduto(id)
+            .subscribe(function (produto) { return _this.produto = produto; }, function (error) { return _this.errorMessage = error; });
+    };
+    ProdutoComponent.prototype.atualizarProduto = function () {
+        var _this = this;
+        var dto = {
+            Id: this.id,
+            Nome: this.produto.Nome,
+            Preco: this.produto.Preco,
+            CategoriaId: this.produto.CategoriaId,
+            Perecivel: this.produto.Perecivel
+        };
+        this._produtoService.atualizar(dto)
+            .subscribe(function () { return _this.obterProdutos(); });
+    };
+    ProdutoComponent.prototype.removerProduto = function () {
+        var _this = this;
+        this._produtoService.remover(this.id)
+            .subscribe(function () { return _this.obterProdutos(); });
+        this.limparCampos();
+    };
+    ProdutoComponent.prototype.limparCampos = function () {
+        this.nomeProduto = "";
+        this.perecivel = false;
+        this.categoriaId = 0;
+        this.precoProduto = 0;
     };
     return ProdutoComponent;
 }(core_1.OnInit));
